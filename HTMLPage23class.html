@@ -14,21 +14,36 @@
 <head>
   <meta charset="utf-8" />
   <title>Chart.js examples</title>
+  <style>
+    .chart{
+      height: 500px !important;
+      width: 800px !important;
+    }
+  </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 </head>
 <body>
   <h1>Bar chart example</h1>
 
-  <canvas id="barchartexample" width="300" height="150"></canvas>
+  <canvas id="barchartexample" class="chart"></canvas>
 
   <script>
     new Chart(document.getElementById("barchartexample"), {
-      type: 'bar',
+      type: 'bar', 
       data: {
         labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
         datasets: [
           {
             label: "Population (millions)",
+            type: "bar",
+            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+            data: [2478, 5267, 734, 784, 433]
+          },
+          {
+            label: "Population (millions)",
+            type: "line",
+            fill: false,
+            borderColor: "#3e95cd",
             backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
             data: [2478, 5267, 734, 784, 433]
           }
